@@ -28,12 +28,11 @@ jobs:
           npm upgrade pogo-data-generator
           npm upgrade pogo-protos
           npm start
-      - name: Configure git
+      - name: Publish Changes
         run: |
+          date > generated.txt
           git config --global user.name "turtlesocks-bot"
           git config --global user.email "turtlesocks-bot@users.noreply.github.com"
-      - name: Generate Stuff
-        run: |
           git add --all
           git commit --message "Hourly Sync"
           git push
